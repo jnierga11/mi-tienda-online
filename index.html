@@ -5,53 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mi Tienda Amazon Afiliados</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:"Segoe UI", Arial, sans-serif; background:#f5f7fa; color:#222; scroll-behavior:smooth; }
-  header { text-align:center; padding:30px 20px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
-  header h1 { font-size:2.5rem; color:#333; }
-  header p { margin-top:10px; font-size:1.1rem; color:#555; }
-  nav#menu-categorias { text-align:center; padding:15px 0; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.05); position:sticky; top:0; z-index:100;}
-  nav#menu-categorias a { margin:0 15px; text-decoration:none; color:#ff9900; font-weight:bold; font-size:1rem; transition:color 0.3s; }
-  nav#menu-categorias a:hover { color:#e68900; }
-  #banner { background:#ff9900; color:#fff; text-align:center; padding:15px; font-size:1.2rem; font-weight:bold; }
-  #slider { max-width:1200px; margin:20px auto; overflow:hidden; position:relative; }
-  #slider-track { display:flex; transition:transform 0.5s ease; }
-  #slider-track article { min-width:250px; margin:10px; background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:15px; text-align:center; flex-shrink:0; }
-  #slider-track article img { max-width:100%; height:auto; border-radius:8px; margin-bottom:10px; }
-  #slider-track article h3 { font-size:1.1rem; margin:10px 0; }
-  .precio { font-weight:bold; color:#ff6600; margin-bottom:8px; display:block; }
-  .btn { display:inline-block; margin-top:8px; padding:10px 16px; background:#ff9900; color:#fff; font-weight:bold; text-decoration:none; border-radius:6px; transition:background 0.3s; }
-  .btn:hover { background:#e68900; }
-  #filtros { text-align:center; margin:15px 0; }
-  #filtros select, #filtros button { margin:5px; padding:8px 12px; font-size:1rem; border-radius:5px; border:1px solid #ccc; cursor:pointer; }
-  main { max-width:1200px; margin:0 auto; padding:30px 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
-  h2.categoria { grid-column:1/-1; font-size:1.8rem; color:#333; margin:40px 0 20px; border-bottom:2px solid #ff9900; padding-bottom:5px; }
-  article:hover { transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
-  footer { text-align:center; padding:20px; background:#f2f2f2; font-size:14px; color:#555; margin-top:50px; position:relative;}
-  #cookie-banner { position:fixed; bottom:0; left:0; right:0; background:#333; color:#fff; padding:15px; text-align:center; font-size:14px; display:flex; justify-content:center; align-items:center; z-index:1000; }
-  #cookie-banner button { margin-left:10px; padding:5px 10px; border:none; border-radius:5px; background:#ff9900; color:#fff; cursor:pointer; }
-  #slider button { position:absolute; top:50%; transform:translateY(-50%); background:#ff9900; color:#fff; border:none; padding:10px; border-radius:50%; cursor:pointer; z-index:10; font-size:20px; }
-  #prev { left:0; }
-  #next { right:0; }
-  @media(max-width:600px){ nav#menu-categorias a{display:block;margin:8px 0;} #slider-track article{min-width:200px;} }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Segoe UI", Arial, sans-serif; background:#f5f7fa; color:#222; }
+header { text-align:center; padding:30px 20px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+header h1 { font-size:2.5rem; color:#333; }
+header p { margin-top:10px; font-size:1.1rem; color:#555; }
+nav#menu-categorias { text-align:center; padding:15px 0; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.05); position:sticky; top:0; z-index:100;}
+nav#menu-categorias a { margin:0 15px; text-decoration:none; color:#ff9900; font-weight:bold; font-size:1rem; transition:color 0.3s; }
+nav#menu-categorias a:hover { color:#e68900; }
+#banner { background:#ff9900; color:#fff; text-align:center; padding:15px; font-size:1.2rem; font-weight:bold; }
+#filtros { text-align:center; margin:15px 0; }
+#filtros select, #filtros button { margin:5px; padding:8px 12px; font-size:1rem; border-radius:5px; border:1px solid #ccc; cursor:pointer; }
+main { max-width:1200px; margin:0 auto; padding:30px 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+article { background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:15px; text-align:center; transition:0.3s; }
+article img { max-width:100%; height:auto; border-radius:8px; margin-bottom:10px; }
+article h3 { font-size:1.1rem; margin:10px 0; }
+.precio { font-weight:bold; color:#ff6600; margin-bottom:8px; display:block; }
+.btn { display:inline-block; margin-top:8px; padding:10px 16px; background:#ff9900; color:#fff; font-weight:bold; text-decoration:none; border-radius:6px; transition:background 0.3s; }
+.btn:hover { background:#e68900; }
+h2.categoria { grid-column:1/-1; font-size:1.8rem; color:#333; margin:40px 0 20px; border-bottom:2px solid #ff9900; padding-bottom:5px; }
+article:hover { transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+footer { text-align:center; padding:20px; background:#f2f2f2; font-size:14px; color:#555; margin-top:50px; }
+#cookie-banner { position:fixed; bottom:0; left:0; right:0; background:#333; color:#fff; padding:15px; text-align:center; font-size:14px; display:flex; justify-content:center; align-items:center; z-index:1000; }
+#cookie-banner button { margin-left:10px; padding:5px 10px; border:none; border-radius:5px; background:#ff9900; color:#fff; cursor:pointer; }
+@media(max-width:600px){ nav#menu-categorias a{display:block;margin:8px 0;} }
 </style>
 </head>
 <body>
 
 <header>
   <h1>Mi Tienda Amazon Afiliados</h1>
-  <p>Los productos más vendidos y recomendados de Amazon España</p>
+  <p>Productos más vendidos y recomendados de Amazon España</p>
 </header>
 
 <div id="banner">¡Ofertas y productos destacados esta semana!</div>
 
 <nav id="menu-categorias"></nav>
-
-<div id="slider">
-  <button id="prev">&#10094;</button>
-  <div id="slider-track"></div>
-  <button id="next">&#10095;</button>
-</div>
 
 <div id="filtros">
   <label for="filtro-categoria">Categoría:</label>
@@ -80,37 +69,71 @@
 <script>
 const affiliateID = "amazonnotes-21";
 
-// Categorías y productos ampliados
+// 50 productos divididos en 5 categorías
 const categorias = [
   {nombre:"Auriculares y Wearables", productos:[
-    {asin:"B0D3Z9PCHG",titulo:"Auriculares Bluetooth",imagen:"https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg",precio:45},
-    {asin:"B08N5WRWNW",titulo:"Reloj Inteligente",imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg",precio:80},
-    {asin:"B07Q6V8V5D",titulo:"Auriculares TOZO T10",imagen:"https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg",precio:25},
-    {asin:"B08L8J5R9H",titulo:"Amazfit GTR 3 Smartwatch",imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg",precio:150},
-    {asin:"B07Y5VJY1Y",titulo:"Cascos Gaming Razer",imagen:"https://m.media-amazon.com/images/I/61yFZ+WR+PL._AC_SL1500_.jpg",precio:70}
+    {asin:"B0D3Z9PCHG", titulo:"Auriculares Bluetooth", imagen:"https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg", precio:45},
+    {asin:"B08N5WRWNW", titulo:"Reloj Inteligente", imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg", precio:80},
+    {asin:"B07Q6V8V5D", titulo:"Auriculares TOZO T10", imagen:"https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg", precio:25},
+    {asin:"B08L8J5R9H", titulo:"Amazfit GTR 3", imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg", precio:150},
+    {asin:"B07Y5VJY1Y", titulo:"Cascos Gaming Razer", imagen:"https://m.media-amazon.com/images/I/61yFZ+WR+PL._AC_SL1500_.jpg", precio:70},
+    {asin:"B08VJYZF24", titulo:"Auriculares Sony WH-1000XM4", imagen:"https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_SL1500_.jpg", precio:250},
+    {asin:"B07F7T6S7X", titulo:"Smartwatch Samsung Galaxy", imagen:"https://m.media-amazon.com/images/I/61jG4r+7KwL._AC_SL1500_.jpg", precio:200},
+    {asin:"B08XQY1ZKJ", titulo:"Auriculares Inalámbricos JBL", imagen:"https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg", precio:60},
+    {asin:"B07D7PDLXC", titulo:"Anker PowerCore 10000", imagen:"https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg", precio:35},
+    {asin:"B08N4QJ8KH", titulo:"Fitbit Charge 5", imagen:"https://m.media-amazon.com/images/I/61j2E+rkGFL._AC_SL1500_.jpg", precio:120}
   ]},
   {nombre:"Electrónica y Gadgets", productos:[
-    {asin:"B08XQY1ZKJ",titulo:"Cargador Portátil",imagen:"https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg",precio:35},
-    {asin:"B08KTZ8249",titulo:"Kindle Paperwhite",imagen:"https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg",precio:120},
-    {asin:"B08KTZ8249",titulo:"Kindle Paperwhite 11ª Gen",imagen:"https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg",precio:130},
-    {asin:"B08XQY1ZKJ",titulo:"Xiaomi Redmi Note 10",imagen:"https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg",precio:180},
-    {asin:"B07Z7YT5XK",titulo:"Auriculares Sony WH-1000XM4",imagen:"https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_SL1500_.jpg",precio:250}
+    {asin:"B08KTZ8249", titulo:"Kindle Paperwhite", imagen:"https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg", precio:120},
+    {asin:"B07Z7YT5XK", titulo:"Cámara Web Logitech", imagen:"https://m.media-amazon.com/images/I/61V0nqUhxXL._AC_SL1500_.jpg", precio:75},
+    {asin:"B07Y5VJY1Z", titulo:"Teclado Mecánico", imagen:"https://m.media-amazon.com/images/I/61Npk4Ih+XL._AC_SL1500_.jpg", precio:50},
+    {asin:"B07VYJZK22", titulo:"Ratón Gaming", imagen:"https://m.media-amazon.com/images/I/61yz0iZV0HL._AC_SL1500_.jpg", precio:40},
+    {asin:"B07F7T6S7A", titulo:"Powerbank 20000mAh", imagen:"https://m.media-amazon.com/images/I/71rG4+8lKXL._AC_SL1500_.jpg", precio:55},
+    {asin:"B08LQ3C8V7", titulo:"Altavoz Bluetooth JBL", imagen:"https://m.media-amazon.com/images/I/71xX1Ck1bOL._AC_SL1500_.jpg", precio:60},
+    {asin:"B09V1JZ9P6", titulo:"Auriculares Gaming Corsair", imagen:"https://m.media-amazon.com/images/I/71hE2TQz2ML._AC_SL1500_.jpg", precio:90},
+    {asin:"B09G2F8HY9", titulo:"Echo Dot 4ª Gen", imagen:"https://m.media-amazon.com/images/I/61EXU8BuGCL._AC_SL1000_.jpg", precio:50},
+    {asin:"B08N5WRWNV", titulo:"Chromecast 4K", imagen:"https://m.media-amazon.com/images/I/61XxErOW+XL._AC_SL1500_.jpg", precio:40},
+    {asin:"B09RGRM4HG", titulo:"Fire TV Stick 4K", imagen:"https://m.media-amazon.com/images/I/51CgKGfMelL._AC_SL1000_.jpg", precio:45}
   ]},
   {nombre:"Hogar y Cocina", productos:[
-    {asin:"B09G9FPHY1",titulo:"Aspiradora sin Cable",imagen:"https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg",precio:200},
-    {asin:"B07VJYZF24",titulo:"Aspiradora Dyson V11",imagen:"https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg",precio:450},
-    {asin:"B08L8J5R9H",titulo:"Philips Airfryer",imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg",precio:120},
-    {asin:"B08KTZ8249",titulo:"Nespresso Vertuo Next",imagen:"https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg",precio:150},
-    {asin:"B07F7T6S7V",titulo:"Licuadora Moulinex",imagen:"https://m.media-amazon.com/images/I/61ZQhF-9E6L._AC_SL1500_.jpg",precio:80},
-    {asin:"B07X9Y7K9N",titulo:"Robot de Cocina Cecotec",imagen:"https://m.media-amazon.com/images/I/71ZhE+rjv7L._AC_SL1500_.jpg",precio:180}
+    {asin:"B09G9FPHY1", titulo:"Aspiradora sin Cable", imagen:"https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg", precio:200},
+    {asin:"B07VJYZF24", titulo:"Aspiradora Dyson V11", imagen:"https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg", precio:450},
+    {asin:"B08L8J5R9H", titulo:"Philips Airfryer", imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg", precio:120},
+    {asin:"B07F7T6S7V", titulo:"Licuadora Moulinex", imagen:"https://m.media-amazon.com/images/I/61ZQhF-9E6L._AC_SL1500_.jpg", precio:80},
+    {asin:"B07X9Y7K9N", titulo:"Robot de Cocina Cecotec", imagen:"https://m.media-amazon.com/images/I/71ZhE+rjv7L._AC_SL1500_.jpg", precio:180},
+    {asin:"B08VJYZF25", titulo:"Nespresso Vertuo Next", imagen:"https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg", precio:150},
+    {asin:"B07Y8Y3G2K", titulo:"Plancha de Vapor Philips", imagen:"https://m.media-amazon.com/images/I/71Mj8y3kGFL._AC_SL1500_.jpg", precio:60},
+    {asin:"B07VYJYZ77", titulo:"Freidora de Aire Moulinex", imagen:"https://m.media-amazon.com/images/I/71wN1v3r4DL._AC_SL1500_.jpg", precio:90},
+    {asin:"B08YH6ZJMG", titulo:"Hervidor Eléctrico Russell Hobbs", imagen:"https://m.media-amazon.com/images/I/61jv3PjdVJL._AC_SL1500_.jpg", precio:35},
+    {asin:"B09F7F2XRV", titulo:"Cafetera de Goteo Braun", imagen:"https://m.media-amazon.com/images/I/61f8DG3e+SL._AC_SL1500_.jpg", precio:60}
   ]},
-  {nombre:"Robótica y Seguridad", productos:[
-    {asin:"B07Y5VJY1Y",titulo:"Blink Mini Cámara",imagen:"https://m.media-amazon.com/images/I/61K9zQXnqzL._AC_SL1000_.jpg",precio:40},
-    {asin:"B07VJYZF24",titulo:"iRobot Roomba 692",imagen:"https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg",precio:350}
+  {nombre:"Deportes y Fitness", productos:[
+    {asin:"B07R8Y6GQT", titulo:"Bicicleta Estática", imagen:"https://m.media-amazon.com/images/I/71xk7H9GhkL._AC_SL1500_.jpg", precio:250},
+    {asin:"B08C7S1D8V", titulo:"Mancuernas Ajustables", imagen:"https://m.media-amazon.com/images/I/61Afy5S4GZL._AC_SL1500_.jpg", precio:90},
+    {asin:"B08BZK1K7Y", titulo:"Colchoneta Yoga", imagen:"https://m.media-amazon.com/images/I/61jDWp4sLQL._AC_SL1500_.jpg", precio:25},
+    {asin:"B07F3N6H9Q", titulo:"Bandas de Resistencia", imagen:"https://m.media-amazon.com/images/I/61uSPe+4pDL._AC_SL1500_.jpg", precio:20},
+    {asin:"B09T6M6J9H", titulo:"Reloj Deportivo Garmin", imagen:"https://m.media-amazon.com/images/I/71bTzM13PCL._AC_SL1500_.jpg", precio:180},
+    {asin:"B08K2ZJ1K1", titulo:"Soga de Saltar", imagen:"https://m.media-amazon.com/images/I/61i+7f3+y4L._AC_SL1500_.jpg", precio:15},
+    {asin:"B08L9K5PWR", titulo:"Bicicleta Spinning", imagen:"https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg", precio:300},
+    {asin:"B07R6T4GQ2", titulo:"Stepper Mini", imagen:"https://m.media-amazon.com/images/I/61X3lH3YxVL._AC_SL1500_.jpg", precio:40},
+    {asin:"B09P1T9R2G", titulo:"Rueda Abdominal", imagen:"https://m.media-amazon.com/images/I/61cP0jV1k6L._AC_SL1500_.jpg", precio:20},
+    {asin:"B08V7YB5MW", titulo:"Pesas Tobilleras", imagen:"https://m.media-amazon.com/images/I/61hjSPaI0JL._AC_SL1500_.jpg", precio:18}
+  ]},
+  {nombre:"Juguetes y Entretenimiento", productos:[
+    {asin:"B07F8Y2G5L", titulo:"Lego Star Wars", imagen:"https://m.media-amazon.com/images/I/81R3CgkXwXL._AC_SL1500_.jpg", precio:60},
+    {asin:"B08C7S1D8X", titulo:"Puzzle 1000 piezas", imagen:"https://m.media-amazon.com/images/I/71CkhLZ+6nL._AC_SL1500_.jpg", precio:25},
+    {asin:"B08X2C9YF8", titulo:"Drone DJI Mini", imagen:"https://m.media-amazon.com/images/I/61XBQ4nM5FL._AC_SL1500_.jpg", precio:350},
+    {asin:"B07R7ZK5F3", titulo:"PlayStation 5", imagen:"https://m.media-amazon.com/images/I/619BkvKW35L._AC_SL1500_.jpg", precio:550},
+    {asin:"B08Q3LZK8D", titulo:"Nintendo Switch", imagen:"https://m.media-amazon.com/images/I/61-PblYntsL._AC_SL1500_.jpg", precio:300},
+    {asin:"B09V2B7X8P", titulo:"Micrófono USB Blue Yeti", imagen:"https://m.media-amazon.com/images/I/61J6I5VJfFL._AC_SL1500_.jpg", precio:120},
+    {asin:"B08D8G5F1R", titulo:"Auriculares VR", imagen:"https://m.media-amazon.com/images/I/71R+G+tXPrL._AC_SL1500_.jpg", precio:200},
+    {asin:"B07Y6T7J3F", titulo:"Cámara Polaroid", imagen:"https://m.media-amazon.com/images/I/61z3S3B7yPL._AC_SL1500_.jpg", precio:90},
+    {asin:"B08N5WN9XK", titulo:"Patinete Eléctrico", imagen:"https://m.media-amazon.com/images/I/61o3s3y7xAL._AC_SL1500_.jpg", precio:400},
+    {asin:"B08C7R9D9G", titulo:"Kit Ciencia Niños", imagen:"https://m.media-amazon.com/images/I/71vF9+bw3KL._AC_SL1500_.jpg", precio:35}
   ]}
 ];
 
-// Menú y filtros
+// Generar menú de categorías
 const menu = document.getElementById("menu-categorias");
 const filtroCat = document.getElementById("filtro-categoria");
 categorias.forEach(cat=>{
@@ -120,68 +143,41 @@ categorias.forEach(cat=>{
   const opt=document.createElement("option"); opt.value=catID; opt.textContent=cat.nombre; filtroCat.appendChild(opt);
 });
 
-// Mostrar productos y slider
-const contenedor=document.getElementById("productos");
-const sliderTrack=document.getElementById("slider-track");
-
+// Mostrar productos
+const contenedor = document.getElementById("productos");
 function mostrarProductos(categoria="todas", precioMax=10000){
   contenedor.innerHTML="";
-  sliderTrack.innerHTML="";
   categorias.forEach(cat=>{
     if(categoria==="todas" || cat.id===categoria){
       const h2=document.createElement("h2"); h2.textContent=cat.nombre; h2.classList.add("categoria"); h2.id=cat.id; contenedor.appendChild(h2);
       cat.productos.forEach(p=>{
         if(p.precio<=precioMax){
-          // Main grid
           const articulo=document.createElement("article");
-          articulo.innerHTML=`<img src="${p.imagen}" alt="${p.titulo}"><h3>${p.titulo}</h3><span class="precio">€${p.precio}</span><a href="https://www.amazon.es/dp/${p.asin}/?tag=${encodeURIComponent(affiliateID)}" target="_blank" class="btn">Ver en Amazon</a>`;
+          articulo.innerHTML = `
+            <img src="${p.imagen}" alt="${p.titulo}">
+            <h3>${p.titulo}</h3>
+            <span class="precio">€${p.precio}</span>
+            <a href="https://www.amazon.es/dp/${p.asin}/?tag=${encodeURIComponent(affiliateID)}" target="_blank" class="btn">Ver en Amazon</a>
+          `;
           contenedor.appendChild(articulo);
-          // Slider
-          const slide=document.createElement("article");
-          slide.innerHTML=articulo.innerHTML;
-          sliderTrack.appendChild(slide);
         }
       });
     }
   });
 }
-
-// Inicial
 mostrarProductos();
 
-// Filtros
 document.getElementById("aplicar-filtros").addEventListener("click",()=>{
   const catSel=filtroCat.value;
   const precioMax=parseFloat(document.getElementById("filtro-precio").value);
   mostrarProductos(catSel, precioMax);
 });
 
-// Slider interactivo
-let sliderIndex=0;
-function moverSlider(index){
-  const slideWidth = sliderTrack.children[0].offsetWidth + 20;
-  sliderTrack.style.transform = `translateX(-${index*slideWidth}px)`;
-}
-
-document.getElementById("prev").addEventListener("click", ()=>{
-  sliderIndex = (sliderIndex - 1 + sliderTrack.children.length) % sliderTrack.children.length;
-  moverSlider(sliderIndex);
-});
-document.getElementById("next").addEventListener("click", ()=>{
-  sliderIndex = (sliderIndex + 1) % sliderTrack.children.length;
-  moverSlider(sliderIndex);
-});
-
-// Auto-desplazamiento
-setInterval(()=>{
-  sliderIndex = (sliderIndex + 1) % sliderTrack.children.length;
-  moverSlider(sliderIndex);
-},3000);
-
-// Cookies
 document.getElementById("accept-cookie").addEventListener("click",()=>{
   document.getElementById("cookie-banner").style.display="none";
 });
 </script>
+
 </body>
 </html>
+
