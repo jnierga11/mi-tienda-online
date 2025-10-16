@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Tienda Online</title>
   <style>
-    /* ====== CSS INTEGRADO ====== */
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background-color: #f5f7fa;
@@ -96,96 +95,34 @@
     <p>Encuentra artículos populares y útiles disponibles en Amazon España</p>
   </header>
 
-  <!-- CONTENEDOR VACÍO PARA LOS PRODUCTOS -->
   <main id="productos">
-    <!-- Los productos se añadirán aquí automáticamente -->
+    <!-- Los productos se añadirán automáticamente -->
   </main>
 
   <footer>
     <p>© 2025 Mi Tienda Online | Como afiliado de Amazon, gano comisiones por las compras que califiquen.</p>
   </footer>
 
-  <!-- SCRIPT AUTOMÁTICO PARA PRODUCTOS -->
   <script>
     const affiliateID = "amazonnotes-21"; // tu ID de afiliado
 
-  const productos = [
-  {
-    asin: "B0D3Z9PCHG",
-    titulo: "Auriculares Bluetooth",
-    imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B08N5WRWNW",
-    titulo: "Reloj Inteligente",
-    imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B08XQY1ZKJ",
-    titulo: "Cargador Portátil",
-    imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B08KTZ8249",
-    titulo: "Kindle Paperwhite",
-    imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B09G9FPHY1",
-    titulo: "Aspiradora sin Cable",
-    imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B07Q6V8V5D",
-    titulo: "Auriculares Inalámbricos TOZO T10",
-    imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B08L8J5R9H",
-    titulo: "Amazfit GTR 3 Smartwatch",
-    imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B07D7PDLXC",
-    titulo: "Anker PowerCore 10000",
-    imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B08KTZ8249",
-    titulo: "Kindle Paperwhite 11ª Generación",
-    imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B07VJYZF24",
-    titulo: "Aspiradora sin Cable Dyson V11",
-    imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B07Y5VJY1Y",
-    titulo: "Blink Mini Cámara de Seguridad",
-    imagen: "https://m.media-amazon.com/images/I/61K9zQXnqzL._AC_SL1000_.jpg"
-  },
-  {
-    asin: "B08L8J5R9H",
-    titulo: "Philips Airfryer HD9252/90",
-    imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B08XQY1ZKJ",
-    titulo: "Xiaomi Redmi Note 10",
-    imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B08KTZ8249",
-    titulo: "Nespresso Vertuo Next",
-    imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg"
-  },
-  {
-    asin: "B07VJYZF24",
-    titulo: "iRobot Roomba 692",
-    imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg"
-  }
-];
+    const productos = [
+      { asin: "B0D3Z9PCHG", titulo: "Auriculares Bluetooth", imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" },
+      { asin: "B08N5WRWNW", titulo: "Reloj Inteligente", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
+      { asin: "B08XQY1ZKJ", titulo: "Cargador Portátil", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" },
+      { asin: "B08KTZ8249", titulo: "Kindle Paperwhite", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
+      { asin: "B09G9FPHY1", titulo: "Aspiradora sin Cable", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" },
+      { asin: "B07Q6V8V5D", titulo: "Auriculares Inalámbricos TOZO T10", imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" },
+      { asin: "B08L8J5R9H", titulo: "Amazfit GTR 3 Smartwatch", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
+      { asin: "B07D7PDLXC", titulo: "Anker PowerCore 10000", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" },
+      { asin: "B08KTZ8249", titulo: "Kindle Paperwhite 11ª Generación", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
+      { asin: "B07VJYZF24", titulo: "Aspiradora sin Cable Dyson V11", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" },
+      { asin: "B07Y5VJY1Y", titulo: "Blink Mini Cámara de Seguridad", imagen: "https://m.media-amazon.com/images/I/61K9zQXnqzL._AC_SL1000_.jpg" },
+      { asin: "B08L8J5R9H", titulo: "Philips Airfryer HD9252/90", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
+      { asin: "B08XQY1ZKJ", titulo: "Xiaomi Redmi Note 10", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" },
+      { asin: "B08KTZ8249", titulo: "Nespresso Vertuo Next", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
+      { asin: "B07VJYZF24", titulo: "iRobot Roomba 692", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" }
+    ];
 
     const contenedor = document.getElementById("productos");
 
