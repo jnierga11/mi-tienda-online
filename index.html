@@ -1,143 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Tienda Amazon Afiliados</title>
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f5f7fa;
-      color: #222;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      background-color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #333;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      color: #555;
-    }
-
-    nav#menu-categorias {
-      text-align: center;
-      padding: 15px 0;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav#menu-categorias a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #ff9900;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    nav#menu-categorias a:hover {
-      color: #e68900;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    h2.categoria {
-      grid-column: 1 / -1;
-      font-size: 1.8rem;
-      color: #333;
-      margin: 40px 0 20px;
-      border-bottom: 2px solid #ff9900;
-      padding-bottom: 5px;
-    }
-
-    article {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-
-    article img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    article h3 {
-      font-size: 1.1rem;
-      margin: 10px 0;
-      color: #333;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 10px 16px;
-      background-color: #ff9900;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #e68900;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f2f2f2;
-      font-size: 14px;
-      color: #555;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 600px) {
-      nav#menu-categorias a {
-        display: block;
-        margin: 8px 0;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Tienda Amazon Afiliados</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Segoe UI", Arial, sans-serif; background:#f5f7fa; color:#222; scroll-behavior:smooth; }
+  header { text-align:center; padding:30px 20px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+  header h1 { font-size:2.5rem; color:#333; }
+  header p { margin-top:10px; font-size:1.1rem; color:#555; }
+  nav#menu-categorias { text-align:center; padding:15px 0; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.05); position:sticky; top:0; z-index:100;}
+  nav#menu-categorias a { margin:0 15px; text-decoration:none; color:#ff9900; font-weight:bold; font-size:1rem; transition:color 0.3s; }
+  nav#menu-categorias a:hover { color:#e68900; }
+  #banner { background:#ff9900; color:#fff; text-align:center; padding:15px; font-size:1.2rem; font-weight:bold; }
+  #slider { max-width:1200px; margin:20px auto; overflow:hidden; position:relative; }
+  #slider-track { display:flex; transition:transform 0.5s ease; }
+  #slider-track article { min-width:250px; margin:10px; background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:15px; text-align:center; flex-shrink:0; }
+  #slider-track article img { max-width:100%; height:auto; border-radius:8px; margin-bottom:10px; }
+  #slider-track article h3 { font-size:1.1rem; margin:10px 0; }
+  .precio { font-weight:bold; color:#ff6600; margin-bottom:8px; display:block; }
+  .btn { display:inline-block; margin-top:8px; padding:10px 16px; background:#ff9900; color:#fff; font-weight:bold; text-decoration:none; border-radius:6px; transition:background 0.3s; }
+  .btn:hover { background:#e68900; }
+  #filtros { text-align:center; margin:15px 0; }
+  #filtros select, #filtros button { margin:5px; padding:8px 12px; font-size:1rem; border-radius:5px; border:1px solid #ccc; cursor:pointer; }
+  main { max-width:1200px; margin:0 auto; padding:30px 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+  h2.categoria { grid-column:1/-1; font-size:1.8rem; color:#333; margin:40px 0 20px; border-bottom:2px solid #ff9900; padding-bottom:5px; }
+  article:hover { transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+  footer { text-align:center; padding:20px; background:#f2f2f2; font-size:14px; color:#555; margin-top:50px; position:relative;}
+  #cookie-banner { position:fixed; bottom:0; left:0; right:0; background:#333; color:#fff; padding:15px; text-align:center; font-size:14px; display:flex; justify-content:center; align-items:center; z-index:1000; }
+  #cookie-banner button { margin-left:10px; padding:5px 10px; border:none; border-radius:5px; background:#ff9900; color:#fff; cursor:pointer; }
+  #slider button { position:absolute; top:50%; transform:translateY(-50%); background:#ff9900; color:#fff; border:none; padding:10px; border-radius:50%; cursor:pointer; z-index:10; font-size:20px; }
+  #prev { left:0; }
+  #next { right:0; }
+  @media(max-width:600px){ nav#menu-categorias a{display:block;margin:8px 0;} #slider-track article{min-width:200px;} }
+</style>
 </head>
 <body>
 
@@ -146,90 +43,145 @@
   <p>Los productos más vendidos y recomendados de Amazon España</p>
 </header>
 
-<nav id="menu-categorias">
-  <!-- Enlaces de categorías generados automáticamente -->
-</nav>
+<div id="banner">¡Ofertas y productos destacados esta semana!</div>
 
-<main id="productos">
-  <!-- Productos generados automáticamente -->
-</main>
+<nav id="menu-categorias"></nav>
+
+<div id="slider">
+  <button id="prev">&#10094;</button>
+  <div id="slider-track"></div>
+  <button id="next">&#10095;</button>
+</div>
+
+<div id="filtros">
+  <label for="filtro-categoria">Categoría:</label>
+  <select id="filtro-categoria"><option value="todas">Todas</option></select>
+  <label for="filtro-precio">Precio máximo (€):</label>
+  <select id="filtro-precio">
+    <option value="10000">Todos</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+    <option value="500">500</option>
+  </select>
+  <button id="aplicar-filtros">Aplicar filtros</button>
+</div>
+
+<main id="productos"></main>
 
 <footer>
   <p>© 2025 Mi Tienda Online | Como afiliado de Amazon, gano comisiones por las compras que califiquen.</p>
 </footer>
 
+<div id="cookie-banner">
+  Esta web usa cookies para mejorar tu experiencia. <button id="accept-cookie">Aceptar</button>
+</div>
+
 <script>
-  const affiliateID = "amazonnotes-21"; // tu ID de afiliado
+const affiliateID = "amazonnotes-21";
 
-  const categorias = [
-    {
-      nombre: "Auriculares y Wearables",
-      productos: [
-        { asin: "B0D3Z9PCHG", titulo: "Auriculares Bluetooth", imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" },
-        { asin: "B08N5WRWNW", titulo: "Reloj Inteligente", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
-        { asin: "B07Q6V8V5D", titulo: "Auriculares Inalámbricos TOZO T10", imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" },
-        { asin: "B08L8J5R9H", titulo: "Amazfit GTR 3 Smartwatch", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" }
-      ]
-    },
-    {
-      nombre: "Electrónica y Gadgets",
-      productos: [
-        { asin: "B08XQY1ZKJ", titulo: "Cargador Portátil", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" },
-        { asin: "B08KTZ8249", titulo: "Kindle Paperwhite", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
-        { asin: "B08KTZ8249", titulo: "Kindle Paperwhite 11ª Generación", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
-        { asin: "B08XQY1ZKJ", titulo: "Xiaomi Redmi Note 10", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" }
-      ]
-    },
-    {
-      nombre: "Hogar y Cocina",
-      productos: [
-        { asin: "B09G9FPHY1", titulo: "Aspiradora sin Cable", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" },
-        { asin: "B07VJYZF24", titulo: "Aspiradora Dyson V11", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" },
-        { asin: "B08L8J5R9H", titulo: "Philips Airfryer HD9252/90", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
-        { asin: "B08KTZ8249", titulo: "Nespresso Vertuo Next", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" }
-      ]
-    },
-    {
-      nombre: "Robótica y Seguridad",
-      productos: [
-        { asin: "B07Y5VJY1Y", titulo: "Blink Mini Cámara de Seguridad", imagen: "https://m.media-amazon.com/images/I/61K9zQXnqzL._AC_SL1000_.jpg" },
-        { asin: "B07VJYZF24", titulo: "iRobot Roomba 692", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" }
-      ]
+// Categorías y productos ampliados
+const categorias = [
+  {nombre:"Auriculares y Wearables", productos:[
+    {asin:"B0D3Z9PCHG",titulo:"Auriculares Bluetooth",imagen:"https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg",precio:45},
+    {asin:"B08N5WRWNW",titulo:"Reloj Inteligente",imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg",precio:80},
+    {asin:"B07Q6V8V5D",titulo:"Auriculares TOZO T10",imagen:"https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg",precio:25},
+    {asin:"B08L8J5R9H",titulo:"Amazfit GTR 3 Smartwatch",imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg",precio:150},
+    {asin:"B07Y5VJY1Y",titulo:"Cascos Gaming Razer",imagen:"https://m.media-amazon.com/images/I/61yFZ+WR+PL._AC_SL1500_.jpg",precio:70}
+  ]},
+  {nombre:"Electrónica y Gadgets", productos:[
+    {asin:"B08XQY1ZKJ",titulo:"Cargador Portátil",imagen:"https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg",precio:35},
+    {asin:"B08KTZ8249",titulo:"Kindle Paperwhite",imagen:"https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg",precio:120},
+    {asin:"B08KTZ8249",titulo:"Kindle Paperwhite 11ª Gen",imagen:"https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg",precio:130},
+    {asin:"B08XQY1ZKJ",titulo:"Xiaomi Redmi Note 10",imagen:"https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg",precio:180},
+    {asin:"B07Z7YT5XK",titulo:"Auriculares Sony WH-1000XM4",imagen:"https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_SL1500_.jpg",precio:250}
+  ]},
+  {nombre:"Hogar y Cocina", productos:[
+    {asin:"B09G9FPHY1",titulo:"Aspiradora sin Cable",imagen:"https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg",precio:200},
+    {asin:"B07VJYZF24",titulo:"Aspiradora Dyson V11",imagen:"https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg",precio:450},
+    {asin:"B08L8J5R9H",titulo:"Philips Airfryer",imagen:"https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg",precio:120},
+    {asin:"B08KTZ8249",titulo:"Nespresso Vertuo Next",imagen:"https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg",precio:150},
+    {asin:"B07F7T6S7V",titulo:"Licuadora Moulinex",imagen:"https://m.media-amazon.com/images/I/61ZQhF-9E6L._AC_SL1500_.jpg",precio:80},
+    {asin:"B07X9Y7K9N",titulo:"Robot de Cocina Cecotec",imagen:"https://m.media-amazon.com/images/I/71ZhE+rjv7L._AC_SL1500_.jpg",precio:180}
+  ]},
+  {nombre:"Robótica y Seguridad", productos:[
+    {asin:"B07Y5VJY1Y",titulo:"Blink Mini Cámara",imagen:"https://m.media-amazon.com/images/I/61K9zQXnqzL._AC_SL1000_.jpg",precio:40},
+    {asin:"B07VJYZF24",titulo:"iRobot Roomba 692",imagen:"https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg",precio:350}
+  ]}
+];
+
+// Menú y filtros
+const menu = document.getElementById("menu-categorias");
+const filtroCat = document.getElementById("filtro-categoria");
+categorias.forEach(cat=>{
+  const catID = cat.nombre.replace(/\s+/g,'-').toLowerCase();
+  cat.id = catID;
+  const link=document.createElement("a"); link.href=`#${catID}`; link.textContent=cat.nombre; menu.appendChild(link);
+  const opt=document.createElement("option"); opt.value=catID; opt.textContent=cat.nombre; filtroCat.appendChild(opt);
+});
+
+// Mostrar productos y slider
+const contenedor=document.getElementById("productos");
+const sliderTrack=document.getElementById("slider-track");
+
+function mostrarProductos(categoria="todas", precioMax=10000){
+  contenedor.innerHTML="";
+  sliderTrack.innerHTML="";
+  categorias.forEach(cat=>{
+    if(categoria==="todas" || cat.id===categoria){
+      const h2=document.createElement("h2"); h2.textContent=cat.nombre; h2.classList.add("categoria"); h2.id=cat.id; contenedor.appendChild(h2);
+      cat.productos.forEach(p=>{
+        if(p.precio<=precioMax){
+          // Main grid
+          const articulo=document.createElement("article");
+          articulo.innerHTML=`<img src="${p.imagen}" alt="${p.titulo}"><h3>${p.titulo}</h3><span class="precio">€${p.precio}</span><a href="https://www.amazon.es/dp/${p.asin}/?tag=${encodeURIComponent(affiliateID)}" target="_blank" class="btn">Ver en Amazon</a>`;
+          contenedor.appendChild(articulo);
+          // Slider
+          const slide=document.createElement("article");
+          slide.innerHTML=articulo.innerHTML;
+          sliderTrack.appendChild(slide);
+        }
+      });
     }
-  ];
-
-  // Generar menú de navegación
-  const menu = document.getElementById("menu-categorias");
-  categorias.forEach(cat => {
-    const catID = cat.nombre.replace(/\s+/g, '-').toLowerCase();
-    cat.id = catID;
-
-    const link = document.createElement("a");
-    link.href = `#${catID}`;
-    link.textContent = cat.nombre;
-    menu.appendChild(link);
   });
+}
 
-  // Generar productos por categoría
-  const contenedor = document.getElementById("productos");
-  categorias.forEach(cat => {
-    const tituloCat = document.createElement("h2");
-    tituloCat.textContent = cat.nombre;
-    tituloCat.classList.add("categoria");
-    tituloCat.id = cat.id;
-    contenedor.appendChild(tituloCat);
+// Inicial
+mostrarProductos();
 
-    cat.productos.forEach(p => {
-      const articulo = document.createElement("article");
-      articulo.innerHTML = `
-        <img src="${p.imagen}" alt="${p.titulo}">
-        <h3>${p.titulo}</h3>
-        <a href="https://www.amazon.es/dp/${p.asin}/?tag=${affiliateID}" target="_blank" class="btn">Ver en Amazon</a>
-      `;
-      contenedor.appendChild(articulo);
-    });
-  });
+// Filtros
+document.getElementById("aplicar-filtros").addEventListener("click",()=>{
+  const catSel=filtroCat.value;
+  const precioMax=parseFloat(document.getElementById("filtro-precio").value);
+  mostrarProductos(catSel, precioMax);
+});
+
+// Slider interactivo
+let sliderIndex=0;
+function moverSlider(index){
+  const slideWidth = sliderTrack.children[0].offsetWidth + 20;
+  sliderTrack.style.transform = `translateX(-${index*slideWidth}px)`;
+}
+
+document.getElementById("prev").addEventListener("click", ()=>{
+  sliderIndex = (sliderIndex - 1 + sliderTrack.children.length) % sliderTrack.children.length;
+  moverSlider(sliderIndex);
+});
+document.getElementById("next").addEventListener("click", ()=>{
+  sliderIndex = (sliderIndex + 1) % sliderTrack.children.length;
+  moverSlider(sliderIndex);
+});
+
+// Auto-desplazamiento
+setInterval(()=>{
+  sliderIndex = (sliderIndex + 1) % sliderTrack.children.length;
+  moverSlider(sliderIndex);
+},3000);
+
+// Cookies
+document.getElementById("accept-cookie").addEventListener("click",()=>{
+  document.getElementById("cookie-banner").style.display="none";
+});
 </script>
-
 </body>
 </html>
