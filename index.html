@@ -64,12 +64,6 @@
       margin: 10px 0 5px;
     }
 
-    article p {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 15px;
-    }
-
     .btn {
       display: inline-block;
       padding: 10px 16px;
@@ -116,11 +110,31 @@
     const affiliateID = "amazonnotes-21"; // tu ID de afiliado
 
     const productos = [
-      { asin: "B0D3Z9PCHG", titulo: "Auriculares Bluetooth" },
-      { asin: "B08N5WRWNW", titulo: "Reloj Inteligente" },
-      { asin: "B08XQY1ZKJ", titulo: "Cargador Portátil" },
-      { asin: "B08KTZ8249", titulo: "Kindle Paperwhite" },
-      { asin: "B09G9FPHY1", titulo: "Aspiradora sin Cable" }
+      {
+        asin: "B0D3Z9PCHG",
+        titulo: "Auriculares Bluetooth",
+        imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg"
+      },
+      {
+        asin: "B08N5WRWNW",
+        titulo: "Reloj Inteligente",
+        imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg"
+      },
+      {
+        asin: "B08XQY1ZKJ",
+        titulo: "Cargador Portátil",
+        imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg"
+      },
+      {
+        asin: "B08KTZ8249",
+        titulo: "Kindle Paperwhite",
+        imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg"
+      },
+      {
+        asin: "B09G9FPHY1",
+        titulo: "Aspiradora sin Cable",
+        imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg"
+      }
     ];
 
     const contenedor = document.getElementById("productos");
@@ -128,7 +142,7 @@
     productos.forEach(p => {
       const articulo = document.createElement("article");
       articulo.innerHTML = `
-        <img src="https://m.media-amazon.com/images/I/${p.asin}.jpg" alt="${p.titulo}">
+        <img src="${p.imagen}" alt="${p.titulo}">
         <h2>${p.titulo}</h2>
         <a href="https://www.amazon.es/dp/${p.asin}/?tag=${affiliateID}" target="_blank" class="btn">Ver en Amazon</a>
       `;
