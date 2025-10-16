@@ -4,62 +4,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Tienda Online</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ====== CSS INTEGRADO ====== */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 10px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    article {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+    }
+
+    article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    article h2 {
+      font-size: 1.2rem;
+      margin: 10px 0 5px;
+    }
+
+    article p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: #ff9900;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #e68900;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f2f2f2;
+      font-size: 14px;
+      color: #555;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>Productos Recomendados de Amazon</h1>
     <p>Encuentra artículos populares y útiles disponibles en Amazon España</p>
   </header>
 
-  <main>
-
-    <!-- Producto 1 -->
-    <article>
-      <img src="https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" alt="Auriculares Bluetooth">
-      <h2>Auriculares Bluetooth</h2>
-      <p>Sonido de alta calidad y batería de larga duración. Perfectos para deporte o viajes.</p>
-      <a href="https://www.amazon.es/dp/B0D3Z9PCHG/?tag=amazonnotes-21" target="_blank" class="btn">Ver en Amazon</a>
-    </article>
-
-    <!-- Producto 2 -->
-    <article>
-      <img src="https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" alt="Reloj Inteligente">
-      <h2>Reloj Inteligente</h2>
-      <p>Control de actividad, pulsómetro y notificaciones del móvil. Compatible con Android y iOS.</p>
-      <a href="https://www.amazon.es/dp/B08N5WRWNW/?tag=amazonnotes-21" target="_blank" class="btn">Ver en Amazon</a>
-    </article>
-
-    <!-- Producto 3 -->
-    <article>
-      <img src="https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" alt="Cargador Portátil">
-      <h2>Cargador Portátil</h2>
-      <p>Batería externa de alta capacidad para cargar tu móvil y tablet varias veces. Compacto y ligero.</p>
-      <a href="https://www.amazon.es/dp/B08XQY1ZKJ/?tag=amazonnotes-21" target="_blank" class="btn">Ver en Amazon</a>
-    </article>
-
-    <!-- Producto 4 -->
-    <article>
-      <img src="https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" alt="Kindle Paperwhite">
-      <h2>Kindle Paperwhite</h2>
-      <p>Lector de libros electrónicos con luz integrada y resistencia al agua. Ideal para leer en cualquier lugar.</p>
-      <a href="https://www.amazon.es/dp/B08KTZ8249/?tag=amazonnotes-21" target="_blank" class="btn">Ver en Amazon</a>
-    </article>
-
-    <!-- Producto 5 -->
-    <article>
-      <img src="https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" alt="Aspiradora sin Cable">
-      <h2>Aspiradora sin Cable</h2>
-      <p>Ligera, potente y portátil. Ideal para limpiar casa y coche de manera rápida.</p>
-      <a href="https://www.amazon.es/dp/B09G9FPHY1/?tag=amazonnotes-21" target="_blank" class="btn">Ver en Amazon</a>
-    </article>
-
+  <!-- CONTENEDOR VACÍO PARA LOS PRODUCTOS -->
+  <main id="productos">
+    <!-- Los productos se añadirán aquí automáticamente -->
   </main>
 
   <footer>
     <p>© 2025 Mi Tienda Online | Como afiliado de Amazon, gano comisiones por las compras que califiquen.</p>
   </footer>
 
+  <!-- SCRIPT AUTOMÁTICO PARA PRODUCTOS -->
+  <script>
+    const affiliateID = "amazonnotes-21"; // tu ID de afiliado
+
+    const productos = [
+      { asin: "B0D3Z9PCHG", titulo: "Auriculares Bluetooth" },
+      { asin: "B08N5WRWNW", titulo: "Reloj Inteligente" },
+      { asin: "B08XQY1ZKJ", titulo: "Cargador Portátil" },
+      { asin: "B08KTZ8249", titulo: "Kindle Paperwhite" },
+      { asin: "B09G9FPHY1", titulo: "Aspiradora sin Cable" }
+    ];
+
+    const contenedor = document.getElementById("productos");
+
+    productos.forEach(p => {
+      const articulo = document.createElement("article");
+      articulo.innerHTML = `
+        <img src="https://m.media-amazon.com/images/I/${p.asin}.jpg" alt="${p.titulo}">
+        <h2>${p.titulo}</h2>
+        <a href="https://www.amazon.es/dp/${p.asin}/?tag=${affiliateID}" target="_blank" class="btn">Ver en Amazon</a>
+      `;
+      contenedor.appendChild(articulo);
+    });
+  </script>
+
 </body>
 </html>
-
