@@ -3,52 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Tienda Online</title>
+  <title>Mi Tienda Amazon Afiliados</title>
   <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background-color: #f5f7fa;
-      margin: 0;
-      padding: 0;
       color: #222;
+      line-height: 1.5;
+      scroll-behavior: smooth;
     }
 
     header {
+      background-color: #fff;
+      padding: 30px 20px;
       text-align: center;
-      padding: 30px 10px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      color: #333;
     }
 
     header p {
       margin-top: 10px;
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #555;
     }
 
+    nav#menu-categorias {
+      text-align: center;
+      padding: 15px 0;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav#menu-categorias a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ff9900;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav#menu-categorias a:hover {
+      color: #e68900;
+    }
+
     main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
+      gap: 25px;
+    }
+
+    h2.categoria {
+      grid-column: 1 / -1;
+      font-size: 1.8rem;
+      color: #333;
+      margin: 40px 0 20px;
+      border-bottom: 2px solid #ff9900;
+      padding-bottom: 5px;
     }
 
     article {
       background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 15px;
       text-align: center;
-      transition: transform 0.2s ease;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     article:hover {
       transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
     article img {
@@ -58,20 +100,22 @@
       margin-bottom: 10px;
     }
 
-    article h2 {
-      font-size: 1.2rem;
-      margin: 10px 0 5px;
+    article h3 {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      color: #333;
     }
 
     .btn {
       display: inline-block;
+      margin-top: 8px;
       padding: 10px 16px;
       background-color: #ff9900;
       color: #fff;
       font-weight: bold;
       text-decoration: none;
       border-radius: 6px;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.3s;
     }
 
     .btn:hover {
@@ -80,62 +124,112 @@
 
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       background-color: #f2f2f2;
       font-size: 14px;
       color: #555;
-      margin-top: 40px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      nav#menu-categorias a {
+        display: block;
+        margin: 8px 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Productos Recomendados de Amazon</h1>
-    <p>Encuentra artículos populares y útiles disponibles en Amazon España</p>
-  </header>
+<header>
+  <h1>Mi Tienda Amazon Afiliados</h1>
+  <p>Los productos más vendidos y recomendados de Amazon España</p>
+</header>
 
-  <main id="productos">
-    <!-- Los productos se añadirán automáticamente -->
-  </main>
+<nav id="menu-categorias">
+  <!-- Enlaces de categorías generados automáticamente -->
+</nav>
 
-  <footer>
-    <p>© 2025 Mi Tienda Online | Como afiliado de Amazon, gano comisiones por las compras que califiquen.</p>
-  </footer>
+<main id="productos">
+  <!-- Productos generados automáticamente -->
+</main>
 
-  <script>
-    const affiliateID = "amazonnotes-21"; // tu ID de afiliado
+<footer>
+  <p>© 2025 Mi Tienda Online | Como afiliado de Amazon, gano comisiones por las compras que califiquen.</p>
+</footer>
 
-    const productos = [
-      { asin: "B0D3Z9PCHG", titulo: "Auriculares Bluetooth", imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" },
-      { asin: "B08N5WRWNW", titulo: "Reloj Inteligente", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
-      { asin: "B08XQY1ZKJ", titulo: "Cargador Portátil", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" },
-      { asin: "B08KTZ8249", titulo: "Kindle Paperwhite", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
-      { asin: "B09G9FPHY1", titulo: "Aspiradora sin Cable", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" },
-      { asin: "B07Q6V8V5D", titulo: "Auriculares Inalámbricos TOZO T10", imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" },
-      { asin: "B08L8J5R9H", titulo: "Amazfit GTR 3 Smartwatch", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
-      { asin: "B07D7PDLXC", titulo: "Anker PowerCore 10000", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" },
-      { asin: "B08KTZ8249", titulo: "Kindle Paperwhite 11ª Generación", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
-      { asin: "B07VJYZF24", titulo: "Aspiradora sin Cable Dyson V11", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" },
-      { asin: "B07Y5VJY1Y", titulo: "Blink Mini Cámara de Seguridad", imagen: "https://m.media-amazon.com/images/I/61K9zQXnqzL._AC_SL1000_.jpg" },
-      { asin: "B08L8J5R9H", titulo: "Philips Airfryer HD9252/90", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
-      { asin: "B08XQY1ZKJ", titulo: "Xiaomi Redmi Note 10", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" },
-      { asin: "B08KTZ8249", titulo: "Nespresso Vertuo Next", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
-      { asin: "B07VJYZF24", titulo: "iRobot Roomba 692", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" }
-    ];
+<script>
+  const affiliateID = "amazonnotes-21"; // tu ID de afiliado
 
-    const contenedor = document.getElementById("productos");
+  const categorias = [
+    {
+      nombre: "Auriculares y Wearables",
+      productos: [
+        { asin: "B0D3Z9PCHG", titulo: "Auriculares Bluetooth", imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" },
+        { asin: "B08N5WRWNW", titulo: "Reloj Inteligente", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
+        { asin: "B07Q6V8V5D", titulo: "Auriculares Inalámbricos TOZO T10", imagen: "https://m.media-amazon.com/images/I/61LLCec9t+L._AC_SL1500_.jpg" },
+        { asin: "B08L8J5R9H", titulo: "Amazfit GTR 3 Smartwatch", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" }
+      ]
+    },
+    {
+      nombre: "Electrónica y Gadgets",
+      productos: [
+        { asin: "B08XQY1ZKJ", titulo: "Cargador Portátil", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" },
+        { asin: "B08KTZ8249", titulo: "Kindle Paperwhite", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
+        { asin: "B08KTZ8249", titulo: "Kindle Paperwhite 11ª Generación", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" },
+        { asin: "B08XQY1ZKJ", titulo: "Xiaomi Redmi Note 10", imagen: "https://m.media-amazon.com/images/I/71VJ6C5JHNL._AC_SL1500_.jpg" }
+      ]
+    },
+    {
+      nombre: "Hogar y Cocina",
+      productos: [
+        { asin: "B09G9FPHY1", titulo: "Aspiradora sin Cable", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" },
+        { asin: "B07VJYZF24", titulo: "Aspiradora Dyson V11", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" },
+        { asin: "B08L8J5R9H", titulo: "Philips Airfryer HD9252/90", imagen: "https://m.media-amazon.com/images/I/71p1L6ELZPL._AC_SL1500_.jpg" },
+        { asin: "B08KTZ8249", titulo: "Nespresso Vertuo Next", imagen: "https://m.media-amazon.com/images/I/71vZJQTX7LL._AC_SL1500_.jpg" }
+      ]
+    },
+    {
+      nombre: "Robótica y Seguridad",
+      productos: [
+        { asin: "B07Y5VJY1Y", titulo: "Blink Mini Cámara de Seguridad", imagen: "https://m.media-amazon.com/images/I/61K9zQXnqzL._AC_SL1000_.jpg" },
+        { asin: "B07VJYZF24", titulo: "iRobot Roomba 692", imagen: "https://m.media-amazon.com/images/I/61mbp0mflwL._AC_SL1500_.jpg" }
+      ]
+    }
+  ];
 
-    productos.forEach(p => {
+  // Generar menú de navegación
+  const menu = document.getElementById("menu-categorias");
+  categorias.forEach(cat => {
+    const catID = cat.nombre.replace(/\s+/g, '-').toLowerCase();
+    cat.id = catID;
+
+    const link = document.createElement("a");
+    link.href = `#${catID}`;
+    link.textContent = cat.nombre;
+    menu.appendChild(link);
+  });
+
+  // Generar productos por categoría
+  const contenedor = document.getElementById("productos");
+  categorias.forEach(cat => {
+    const tituloCat = document.createElement("h2");
+    tituloCat.textContent = cat.nombre;
+    tituloCat.classList.add("categoria");
+    tituloCat.id = cat.id;
+    contenedor.appendChild(tituloCat);
+
+    cat.productos.forEach(p => {
       const articulo = document.createElement("article");
       articulo.innerHTML = `
         <img src="${p.imagen}" alt="${p.titulo}">
-        <h2>${p.titulo}</h2>
+        <h3>${p.titulo}</h3>
         <a href="https://www.amazon.es/dp/${p.asin}/?tag=${affiliateID}" target="_blank" class="btn">Ver en Amazon</a>
       `;
       contenedor.appendChild(articulo);
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
